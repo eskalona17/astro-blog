@@ -1,21 +1,13 @@
 ---
-interface Props {
-  title?: string;
-  description?: string;
-}
+// component import
+import MainHead from "./MainHead.astro";
 
-const { title = "My astro Blog", description = "My coolest blog" } = Astro.props as Props;
+
+const { title = "My astro Blog", description = "My coolest blog" } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description}>
-    <title>{title}</title>
-  </head>
+  <MainHead {title} {description} />
   <body>
     <slot> Hola paco</slot>
   </body>
